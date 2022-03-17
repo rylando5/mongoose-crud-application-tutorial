@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href = "/css/main.css">
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>tinymce.init({selector:'textarea'});</script>
+    <title>New Recipe </title>
+</head>
+<body>
+    
+    <h1>New Recipe</h1>
+
+    <form action = "/recipe" method = "post">
+        <div class="divform-group">
+            
+            <input class = "input" type = text placeholder="Recipe Title" name= "name" required>
+            <br>
+            <input class = "author" type = "text" placeholder = "Author" name = "author" required>
+            <br>
+            <textarea type =  "text" placeholder = "Recipe" name = "recipe"></textarea>
+            <br>
+            <input type = "text" placeholder = "Recipe Tips" name = "tips">
+            <br>
+
+            
+            
+            <input type = "submit">
+
+        </div>
+    
+        
+    </form>
+    <a href = "/"><button>Cancel</button></a>
+
+
+</body>
+</html>

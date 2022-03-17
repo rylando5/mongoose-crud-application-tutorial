@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href = "/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    
+    <title>Display</title>
+</head>
+<body>
+    <a href = "/"><button class="btn"><i class="fa fa-home"></i></button></a>
+    <div class = "content">
+        <h3> <b>Recipe Title:</b> <%= recipePost.recipeName %></h3>
+        <h4><b>Author:</b> <%= recipePost.author %></h4>
+        <p> <b>Recipe:</b> <%- recipePost.recipe %></p>
+        <p><b>Additional Tips:</b> <%= recipePost.tips %></p>
+        <p> <%= recipePost.timeCreated.toLocaleDateString() %></p>
+       
+        
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href = "/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/bb3e83e784.js" crossorigin="anonymous"></script>
+    
+    <title>Home</title>
+</head>
+<body>
+    <h1>Share a Recipe!</h1>
+    <a href = "/recipe/new"><button>+ new recipe</button></a>
+
+
+
+
+    <% if(recipePost.length < 1){ %>
+        <p class="text-">No recipes, enter to share a recipe!</p>
+    <% } %>  
+
+    <% recipePost.forEach(recipeBlog =>{ %>
+    <div class = "content">
+        <div class = "blog-body">
+            <!-- display more button -->
+            <div class = "more">
+
+
+                <a href = "/recipe/edit/<%= recipeBlog.id %>"><button><i class="fa-solid fa-wrench"></i></button></a>
+                <a href = "recipe/<%= recipeBlog.slug %>"><button><i style="font-size:15px" class="fa">&#xf06e;</i></button></a>
+
+
+            </div>
+
+
+            
+        <h3> <b>Recipe Title:</b> <%= recipeBlog.recipeName %></h3>
+        <h4><b>Author:</b> <%= recipeBlog.author %></h4>
+        <p> <b></b> <%- recipeBlog.snippet %></p>
+
+        
+        <p><b>Additional Tips:</b> <%= recipeBlog.tips %></p>
+        <p> <%= recipeBlog.timeCreated.toLocaleDateString() %></p>
+       
+            <!-- Delete -->
+        <form action = "/recipe/<%= recipeBlog.id %>?_method=DELETE" method = "POST">
+        <button class = "delete"><i class="fa fa-trash-o" style="font-size:15px"></i></button>
+        </form>
+
+        </div>
+    </div>
+  <% }) %>
+
+
+ 
+
+
+</body>
+</html>
+
+<style>
+.content{
+    margin: 1rem;
+    border: 1px solid black;
+}
+
+.blog-body{
+    margin:0.5rem;
+}
+
+
+</style>

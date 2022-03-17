@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Recipe app</title>
+</head>
+<body>
+    <h4>Recipe Application</h4>
+
+    <form action = "/addto" method = "POST">
+        <input type = "text" placeholder = "Recipe Name" name = "name">
+        <br>
+        <input type = "text" placeholder = "Author" name = "author">
+        <br>
+        <textarea type =  "text" placeholder = "Recipe" name = "recipe"></textarea>
+        <br>
+        <input type = "text" placeholder = "Recipe Tips" name = "tips">
+        <br>
+        <input type = "submit">
+
+    </form>
+    <a href = '/retrieve'><button>View all added recipes!</button></a>
+
+</body>
+</html>
